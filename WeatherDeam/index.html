@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <script src="./angular.min.js"></script>
+   <script src="./lib/weather.js"></script>
+   <link type="text/css" href="./public/layouts/js/bootstrap.min.css" rel="stylesheet">
+ </head>
+<title>weather</title>
+<body>
+<div ng-app="weather", ng-controller="weatherCtl">
+  <h1>a week weather seacher</h1>
+  <p>city:
+    <select ng-model="selCity" ng-show="true">
+      <option value ="shenzhun">shenzhun</option>
+      <option value ="shanghai">shanghai</option>
+      <option value="nanjing">nanjing</option>
+      <option value="beijing">beijing</option>
+   </select>
+  </p>
+  <button type="button" ng-click="getWeather()">search</button>
+  
+  <div>
+    <table border="1">
+      <tr>
+        <th>date</th>
+        <th>high of</th>
+        <th>low of</th>
+        <th>weather</th> 
+      </tr> 
+      <tr ng-repeat="date in weatherData">
+        <td>{{date.date}}</td>
+        <td>{{date.high}}</td>
+        <td>{{date.low}}</td>
+        <td>{{date.weather}}</td>       
+      </tr>
+    </table>
+   </div>
+     
+</div>
+
+</body>
+</html> 
